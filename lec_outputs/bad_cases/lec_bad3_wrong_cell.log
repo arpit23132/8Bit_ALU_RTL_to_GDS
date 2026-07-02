@@ -1,0 +1,163 @@
+                          CONFORMAL (R)
+                   Version 20.10-p100 (01-May-2020) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2249 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library lib/slow.v -verilog -both
+// Parsing file lib/slow.v ...
+// Warning: (RTL7.2) Gate or transistor primitive is using weak attributes (occurrence:1)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:196)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:84)
+// Warning: (VLG5.2) Primitive input port has multiple bits. Ignore all but LSB bit (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:480)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:960)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+CPU time     : 0.58    seconds
+Elapse time  : 2       seconds
+Memory usage : 272.50  M bytes
+// Command: read design rtl/ALU.v -verilog -golden
+// Parsing file rtl/ALU.v ...
+// Golden root module is set to 'ALU'
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:3)
+// Warning: (RTL6.3) X created when divisor equals to zero (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+// Command: read design lec_bad_netlists/bad3_wrong_cell.v -verilog -revised
+// Parsing file lec_bad_netlists/bad3_wrong_cell.v ...
+// Revised root module is set to 'ALU'
+// Warning: (RTL2.13) Undriven pin is detected (occurrence:1)
+// Warning: (HRC3.5a) Open input/inout port connection is detected (occurrence:1)
+// Warning: There are 1 undriven pins in Revised
+// Note: Read VERILOG design successfully
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 16 X assignment(s) as don't care(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F32) Created 1 Z gate(s) for floating net(s) and floating pin(s)
+CPU time     : 0.85    seconds
+Elapse time  : 3       seconds
+Memory usage : 314.12  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 74
+// Revised key points = 75
+// Mapping key points ...
+// Warning: Revised has 1 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            22     16     36        74      
+--------------------------------------------------------------------------------
+Revised           22     16     36        74      
+================================================================================
+Unmapped points:
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   Z         Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+// Warning: Key point mapping is incomplete
+// Command: add compared point -all
+// 52 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     35        51      
+--------------------------------------------------------------------------------
+Non-equivalent       0      1         1       
+================================================================================
+CPU time     : 2.19    seconds
+Elapse time  : 4       seconds
+Memory usage : 366.86  M bytes
+// Command: report messages -compare -verb
+// Command: report compare data -noneq
+Compared points are: Non-equivalent
+  (G) + 74   DFF  /out1_reg[0]
+  (R) + 55   DFF  /out1_reg[0]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1489 MUX  /U$14/U$1
+  (R) + 1959 INV  /g7687__5122/U$4
+
+1 Non-equivalent point(s) reported
+1 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     35        51      
+--------------------------------------------------------------------------------
+Non-equivalent       0      1         1       
+================================================================================
+// Command: report verification
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                  FAIL:NONEQ
+================================================================================
+// Command: set verification information lec_outputs/bad_cases/Equivalence_checking_bad3
+// Note: Verification information lec_outputs/bad_cases/Equivalence_checking_bad3 does not exist. New directory created.
+// Verification information is set to /home/arpit23132/Desktop/RTL_to_GDS_ALU/lec_outputs/bad_cases/Equivalence_checking_bad3.
+// Advanced reporting is enabled and the output is written to /home/arpit23132/Desktop/RTL_to_GDS_ALU/lec_outputs/bad_cases/Equivalence_checking_bad3
+// Command: write verification information
+// Verification information is written to Equivalence_checking_bad3.
+// Command: exit
+// Command: diagnose 74 -golden // gate out1_reg[0]
+Diagnosis for Non-equivalent key points:
+  (G) + 74   DFF  /out1_reg[0]
+  (R) + 55   DFF  /out1_reg[0]/U$1/U$1
+
+Diagnosis points: [DATA]
+  (G) + 1489 MUX  /U$14/U$1
+  (R) + 1959 INV  /g7687__5122/U$4
+
+There is an extra unmapped key point in this logic cone
+================================================================================
+          ID    Type                Name
+--------------------------------------------------------------------------------
+   (R)   75    OAI22X1:'PIN'       /g7763__2346/B1
+================================================================================
+
+
+Non-equivalent signal and its error candidates
+================================================================================
+     ID (R)   Type            Likelihood  Name 
+--------------------------------------------------------------------------------
+     1959     OAI2BB1XL                   /g7687__5122
+------- Candidates -------------------------------------------------------------
+1:   896      CLKINVX1        1.00        /g7803
+2:   1887     OAI22X1         1.00        /g7796__2883
+3:   1889     CLKXOR2X1       1.00        /g7864__4733
+4:   1890     OAI22X1         1.00        /g7763__2346
+5:   1898     AOI22X1         1.00        /g7793__9315
+6:   1910     OAI21X1         1.00        /g7699__2883
+7:   1906     MXI2XL          0.82        /g7720__1881
+8:   1902     MXI2XL          0.75        /g7764__1666
+9:   1885     INVX1           0.61        /g7861
+10:  1263     INVX1           0.59        /g7855
+================================================================================

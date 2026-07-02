@@ -1,0 +1,203 @@
+                          CONFORMAL (R)
+                   Version 20.10-p100 (01-May-2020) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2249 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library lib/slow.v -verilog -both
+// Parsing file lib/slow.v ...
+// Warning: (RTL7.2) Gate or transistor primitive is using weak attributes (occurrence:1)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:196)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:84)
+// Warning: (VLG5.2) Primitive input port has multiple bits. Ignore all but LSB bit (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:480)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:960)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+CPU time     : 0.57    seconds
+Elapse time  : 1       seconds
+Memory usage : 272.50  M bytes
+// Command: read design rtl/ALU.v -verilog -golden
+// Parsing file rtl/ALU.v ...
+// Golden root module is set to 'ALU'
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:3)
+// Warning: (RTL6.3) X created when divisor equals to zero (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+// Command: read design lec_bad_netlists/bad2_miswire.v -verilog -revised
+// Parsing file lec_bad_netlists/bad2_miswire.v ...
+// Revised root module is set to 'ALU'
+// Note: Read VERILOG design successfully
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 16 X assignment(s) as don't care(s)
+// Processing Revised ...
+// Modeling Revised ...
+CPU time     : 0.92    seconds
+Elapse time  : 2       seconds
+Memory usage : 314.26  M bytes
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            22     16     36        74      
+--------------------------------------------------------------------------------
+Revised           22     16     36        74      
+================================================================================
+// Command: add compared point -all
+// 52 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     28        44      
+--------------------------------------------------------------------------------
+Non-equivalent       0      8         8       
+================================================================================
+CPU time     : 1.14    seconds
+Elapse time  : 2       seconds
+Memory usage : 329.26  M bytes
+// Command: report messages -compare -verb
+// Command: report compare data -noneq
+Compared points are: Non-equivalent
+  (G) + 59   DFF  /out2_reg[7]
+  (R) + 70   DFF  /out2_reg[7]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 782  MUX  /U$1/U$8
+  (R) + 1828 INV  /g6055__4319/U$3
+
+Compared points are: Non-equivalent
+  (G) + 60   DFF  /out2_reg[6]
+  (R) + 69   DFF  /out2_reg[6]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 772  MUX  /U$1/U$7
+  (R) + 1840 INV  /g6057__8428/U$3
+
+Compared points are: Non-equivalent
+  (G) + 61   DFF  /out2_reg[5]
+  (R) + 68   DFF  /out2_reg[5]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 755  MUX  /U$1/U$6
+  (R) + 1799 INV  /g6054__6260/U$3
+
+Compared points are: Non-equivalent
+  (G) + 62   DFF  /out2_reg[4]
+  (R) + 67   DFF  /out2_reg[4]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 727  MUX  /U$1/U$5
+  (R) + 1885 INV  /g6061__1617/U$3
+
+Compared points are: Non-equivalent
+  (G) + 63   DFF  /out2_reg[3]
+  (R) + 66   DFF  /out2_reg[3]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 692  MUX  /U$1/U$4
+  (R) + 1853 INV  /g6058__5526/U$3
+
+Compared points are: Non-equivalent
+  (G) + 64   DFF  /out2_reg[2]
+  (R) + 65   DFF  /out2_reg[2]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 650  MUX  /U$1/U$3
+  (R) + 1862 INV  /g6059__6783/U$3
+
+Compared points are: Non-equivalent
+  (G) + 65   DFF  /out2_reg[1]
+  (R) + 64   DFF  /out2_reg[1]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 601  MUX  /U$1/U$2
+  (R) + 1875 INV  /g6060__3680/U$3
+
+Compared points are: Non-equivalent
+  (G) + 66   DFF  /out2_reg[0]
+  (R) + 63   DFF  /out2_reg[0]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 548  MUX  /U$1/U$1
+  (R) + 666  INV  /g6051__2398/U$3
+
+8 Non-equivalent point(s) reported
+8 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     28        44      
+--------------------------------------------------------------------------------
+Non-equivalent       0      8         8       
+================================================================================
+// Command: report verification
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                  FAIL:NONEQ
+================================================================================
+// Command: set verification information lec_outputs/bad_cases/Equivalence_checking_bad2
+// Note: Verification information lec_outputs/bad_cases/Equivalence_checking_bad2 does not exist. New directory created.
+// Verification information is set to /home/arpit23132/Desktop/RTL_to_GDS_ALU/lec_outputs/bad_cases/Equivalence_checking_bad2.
+// Advanced reporting is enabled and the output is written to /home/arpit23132/Desktop/RTL_to_GDS_ALU/lec_outputs/bad_cases/Equivalence_checking_bad2
+// Command: write verification information
+// Verification information is written to Equivalence_checking_bad2.
+// Command: exit
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     28        44      
+--------------------------------------------------------------------------------
+Non-equivalent       0      8         8       
+================================================================================
+// Command: diagnose 66 -golden // gate out2_reg[0]
+Diagnosis for Non-equivalent key points:
+  (G) + 66   DFF  /out2_reg[0]
+  (R) + 63   DFF  /out2_reg[0]/U$1/U$1
+
+Diagnosis points: [DATA]
+  (G) + 548  MUX  /U$1/U$1
+  (R) + 666  INV  /g6051__2398/U$3
+
+
+Non-equivalent signal and its error candidates
+================================================================================
+     ID (R)   Type            Likelihood  Name 
+--------------------------------------------------------------------------------
+     666      OAI211X1                    /g6051__2398
+------- Candidates -------------------------------------------------------------
+1:   573      NOR2BX1         1.00        /g6206__1881
+2:   576      CLKINVX1        1.00        /g6197
+3:   584      ADDFX1          1.00        /g6068__7098
+4:   663      NAND3BX1        1.00        /g6066__8246
+5:   582      MXI2XL          0.78        /g6180__2883
+6:   590      ADDFX1          0.71        /g6074__5115
+7:   317      NOR2XL          0.60        /g6202__5122
+8:   577      NOR3X1          0.60        /g6193__6783
+9:   596      ADDFX1          0.55        /g6080__9945
+10:  585      OAI22X1         0.53        /g6182__1666
+================================================================================

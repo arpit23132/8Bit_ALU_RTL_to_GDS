@@ -1,0 +1,255 @@
+                          CONFORMAL (R)
+                   Version 20.10-p100 (01-May-2020) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2019. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 2249 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library lib/slow.v -verilog -both
+// Parsing file lib/slow.v ...
+// Warning: (RTL7.2) Gate or transistor primitive is using weak attributes (occurrence:1)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:196)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:84)
+// Warning: (VLG5.2) Primitive input port has multiple bits. Ignore all but LSB bit (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:480)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:960)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+CPU time     : 0.60    seconds
+Elapse time  : 1       seconds
+Memory usage : 272.49  M bytes
+// Command: read design rtl/ALU.v -verilog -golden
+// Parsing file rtl/ALU.v ...
+// Golden root module is set to 'ALU'
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:3)
+// Warning: (RTL6.3) X created when divisor equals to zero (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+// Command: read design lec_bad_netlists/bad1_missing_ff.v -verilog -revised
+// Parsing file lec_bad_netlists/bad1_missing_ff.v ...
+// Revised root module is set to 'ALU'
+// Warning: (RTL2.5) Net is referenced without an assignment. Design verification will be based on set_undriven_signal setting (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:1)
+// Warning: There are 1 undriven nets in Revised
+// Note: Read VERILOG design successfully
+// Command: set system mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Warning: (F34) Converted 16 X assignment(s) as don't care(s)
+// Processing Revised ...
+// Modeling Revised ...
+// (F32) Created 1 Z gate(s) for floating net(s) and floating pin(s)
+CPU time     : 0.91    seconds
+Elapse time  : 1       seconds
+Memory usage : 314.11  M bytes
+// Mapping key points ...
+// Warning: Golden has 1 unmapped key points
+// Warning: Revised has 1 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            22     16     35        73      
+--------------------------------------------------------------------------------
+Revised           22     16     35        73      
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   Z         Total   
+--------------------------------------------------------------------------------
+Not-mapped        1         1       
+================================================================================
+// Warning: Key point mapping is incomplete
+// Command: add compared point -all
+// Warning: Golden has 1 unmapped key points which will not be compared
+// 51 compared points added to compare list
+// Command: compare
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     19        35      
+--------------------------------------------------------------------------------
+Non-equivalent       0      16        16      
+================================================================================
+CPU time     : 1.33    seconds
+Elapse time  : 2       seconds
+Memory usage : 342.36  M bytes
+// Command: report messages -compare -verb
+// Command: report compare data -noneq
+Compared points are: Non-equivalent
+  (G) + 59   DFF  /out2_reg[7]
+  (R) + 69   DFF  /out2_reg[7]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 782  MUX  /U$1/U$8
+  (R) + 1276 INV  /g7619__5526/U$2
+
+Compared points are: Non-equivalent
+  (G) + 60   DFF  /out2_reg[6]
+  (R) + 68   DFF  /out2_reg[6]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 772  MUX  /U$1/U$7
+  (R) + 1284 INV  /g7620__6783/U$2
+
+Compared points are: Non-equivalent
+  (G) + 61   DFF  /out2_reg[5]
+  (R) + 67   DFF  /out2_reg[5]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 755  MUX  /U$1/U$6
+  (R) + 1308 INV  /g7624__1705/U$2
+
+Compared points are: Non-equivalent
+  (G) + 62   DFF  /out2_reg[4]
+  (R) + 66   DFF  /out2_reg[4]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 727  MUX  /U$1/U$5
+  (R) + 1316 INV  /g7625__5122/U$2
+
+Compared points are: Non-equivalent
+  (G) + 63   DFF  /out2_reg[3]
+  (R) + 65   DFF  /out2_reg[3]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 692  MUX  /U$1/U$4
+  (R) + 1300 INV  /g7622__1617/U$2
+
+Compared points are: Non-equivalent
+  (G) + 64   DFF  /out2_reg[2]
+  (R) + 64   DFF  /out2_reg[2]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 650  MUX  /U$1/U$3
+  (R) + 1292 INV  /g7621__3680/U$2
+
+Compared points are: Non-equivalent
+  (G) + 65   DFF  /out2_reg[1]
+  (R) + 63   DFF  /out2_reg[1]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 601  MUX  /U$1/U$2
+  (R) + 1151 INV  /g7618__8428/U$2
+
+Compared points are: Non-equivalent
+  (G) + 66   DFF  /out2_reg[0]
+  (R) + 62   DFF  /out2_reg[0]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 548  MUX  /U$1/U$1
+  (R) + 609  INV  /g7614__2398/U$3
+
+Compared points are: Non-equivalent
+  (G) + 67   DFF  /out1_reg[7]
+  (R) + 61   DFF  /out1_reg[7]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1829 MUX  /U$14/U$8
+  (R) + 999  INV  /g7615__5107/U$2
+
+Compared points are: Non-equivalent
+  (G) + 68   DFF  /out1_reg[6]
+  (R) + 60   DFF  /out1_reg[6]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1789 MUX  /U$14/U$7
+  (R) + 1058 INV  /g7616__6260/U$3
+
+Compared points are: Non-equivalent
+  (G) + 69   DFF  /out1_reg[5]
+  (R) + 59   DFF  /out1_reg[5]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1739 MUX  /U$14/U$6
+  (R) + 1103 INV  /g7617__4319/U$4
+
+Compared points are: Non-equivalent
+  (G) + 70   DFF  /out1_reg[4]
+  (R) + 58   DFF  /out1_reg[4]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1689 MUX  /U$14/U$5
+  (R) + 1362 INV  /g7633__4733/U$4
+
+Compared points are: Non-equivalent
+  (G) + 71   DFF  /out1_reg[3]
+  (R) + 57   DFF  /out1_reg[3]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1639 MUX  /U$14/U$4
+  (R) + 1407 INV  /g7642__6417/U$3
+
+Compared points are: Non-equivalent
+  (G) + 72   DFF  /out1_reg[2]
+  (R) + 56   DFF  /out1_reg[2]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1589 MUX  /U$14/U$3
+  (R) + 1452 INV  /g7648__4319/U$4
+
+Compared points are: Non-equivalent
+  (G) + 73   DFF  /out1_reg[1]
+  (R) + 55   DFF  /out1_reg[1]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1539 MUX  /U$14/U$2
+  (R) + 1498 INV  /g7654__1617/U$4
+
+Compared points are: Non-equivalent
+  (G) + 74   DFF  /out1_reg[0]
+  (R) + 54   DFF  /out1_reg[0]/U$1/U$1
+Due to these Non-equivalent points:
+[DATA]
+  (G) + 1489 MUX  /U$14/U$1
+  (R) + 1568 INV  /g7659__8246/U$2
+
+16 Non-equivalent point(s) reported
+16 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           16     19        35      
+--------------------------------------------------------------------------------
+Non-equivalent       0      16        16      
+================================================================================
+// Command: report verification
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 1
+     Not-mapped DFF/DLAT is detected:                          yes
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                  FAIL:NONEQ
+================================================================================
+// Command: set verification information lec_outputs/bad_cases/Equivalence_checking_bad1
+// Note: Verification information lec_outputs/bad_cases/Equivalence_checking_bad1 does not exist. New directory created.
+// Verification information is set to /home/arpit23132/Desktop/RTL_to_GDS_ALU/lec_outputs/bad_cases/Equivalence_checking_bad1.
+// Advanced reporting is enabled and the output is written to /home/arpit23132/Desktop/RTL_to_GDS_ALU/lec_outputs/bad_cases/Equivalence_checking_bad1
+// Command: write verification information
+// Verification information is written to Equivalence_checking_bad1.
+// Command: exit
