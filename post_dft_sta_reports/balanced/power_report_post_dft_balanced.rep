@@ -1,0 +1,3 @@
+** WARN:  (VOLTUS_POWR-2176): The timing libraries were loaded without reading the power information. The power analysis can not be performed.
+To enable power analysis, set the global variable 'set timing_library_read_without_power false' and re-load timing libraries.
+
