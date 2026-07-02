@@ -1,0 +1,55 @@
+======================================================================
+STAGE 3: Formal Equivalence Checking (LEC) - Bug Injection Log
+Project  : 8-bit ALU
+Location : ./lec_bad_netlists/
+======================================================================
+
+This directory contains intentionally corrupted post-synthesis netlists 
+used to evaluate the defect detection and diagnostic capabilities of 
+Cadence Conformal LEC. 
+
+DO NOT USE THESE NETLISTS FOR PHYSICAL DESIGN (INNOVUS).
+
+----------------------------------------------------------------------
+Case 1: bad1_missing_ff.v
+----------------------------------------------------------------------
+* Source Base : synthesis_outputs/min_area_case/synthesized_netlist_min_area.v
+* Modification: Manually deleted an entire sequential flip-flop instance line.
+  - Target instance example: DFFQX1 \Y_reg[7] ( .D(...), .Q(Y[7]), .CK(clk) );
+* Expected LEC Result: FAIL (NON-EQUIVALENT)
+* Diagnostic Behavior: Conformal flags unmapped key points. The state register 
+  endpoint no longer exists in the Revised design, leaving the downstream 
+  logic cone driven by its Q output completely un-driven, causing cascading 
+  NONEQ flags.
+
+----------------------------------------------------------------------
+Case 2: bad2_miswire.v
+----------------------------------------------------------------------
+* Source Base : synthesis_outputs/tight_timing_case/synthesized_netlist_tight_timing.v
+* Modification: Altered a combinational net connection on an input pin of a gate.
+  - Original example: NAND3BX1 g6066__8246(.AN (n_186), .B (n_58), .C (n_70), .Y (n_188));
+  - Modified example: NAND3BX1 g6066__8246(.AN (n_186), .B (n_57), .C (n_70), .Y (n_188));   //Tied B to n_57
+* Expected LEC Result: FAIL (NON-EQUIVALENT)
+* Diagnostic Behavior: Conformal successfully maps all key points, but the mathematical 
+  Boolean evaluation fails. The output cone of this specific gate (`n_300`) and all 
+  subsequent downstream registers/ports fed by it will report a 'NONEQ' state.
+
+----------------------------------------------------------------------
+Case 3: bad3_wrong_cell.v
+----------------------------------------------------------------------
+* Source Base : synthesis_outputs/balanced_case/synthesized_netlist_balanced.v
+* Modification: Substituted a primitive standard-cell gate type for an incorrect logic function.
+  - Original example: OAI21X1 g7763__2346(.A0 (n_45), .A1 (n_0), .B0 (n_60), .Y (n_77));
+  - Modified example: OAI22X1 g7763__2346(.A0 (n_45), .A1 (n_0), .B0 (n_60), .Y (n_77));  //Changed OAI21 to OAI22
+* Expected LEC Result: FAIL (NON-EQUIVALENT)
+* Diagnostic Behavior: Key points map successfully, but the structural function checking engine 
+  flags a functional truth table mismatch at the logic cone output because the logical function 
+  of a NOR primitive mathematically contradicts the golden RTL NAND description.
+
+======================================================================
+Execution Instructions:
+To check these bugs, run the corresponding scripts from the workspace root:
+  lec -Dofile lec_scripts/lec_bad1_missing_ff.do -NOGui
+  lec -Dofile lec_scripts/lec_bad2_miswire.do -NOGui
+  lec -Dofile lec_scripts/lec_bad3_wrong_cell.do -NOGui
+======================================================================
