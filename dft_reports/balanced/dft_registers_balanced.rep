@@ -1,0 +1,54 @@
+Reporting registers that pass DFT rules
+  X_reg[0] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[1] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[2] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[3] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[4] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[5] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[6] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  X_reg[7] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[0] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[1] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[2] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[3] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[4] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[5] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[6] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  Y_reg[7] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[0] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[1] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[2] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[3] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[4] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[5] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[6] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out1_reg[7] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[0] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[1] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[2] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[3] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[4] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[5] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[6] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  out2_reg[7] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  sel_ff_reg[0] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  sel_ff_reg[1] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  sel_ff_reg[2] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+  sel_ff_reg[3] 	PASS; Test clock: clk/rise; Mapped for DFT; 
+Reporting registers that fail DFT rules
+Reporting registers that are preserved or marked dont-scan
+Reporting registers that are marked Abstract Segment Dont Scan
+Reporting registers that are part of shift register segments
+Reporting registers that are identified as lockup elements
+Reporting registers that are level-sensitive elements
+Reporting misc. non-scan registers
+Summary: 
+Total registers that pass DFT rules: 36
+Total registers that fail DFT rules: 0
+Total registers that are marked preserved or dont-scan: 0
+Total registers that are marked Abstract Segment dont-scan: 0
+Total registers that are part of shift register segments: 0
+Total registers that are lockup elements: 0
+Total registers that are level-sensitive: 0
+Total registers that are misc. non-scan: 0
+

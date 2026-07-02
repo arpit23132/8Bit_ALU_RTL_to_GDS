@@ -1,0 +1,53 @@
+VERSION 5.5 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN ALU ;
+
+SCANCHAINS 1 ;
+  - AutoChain_1_seg1_clk_rising 
+    + PARTITION p_clk_rising 
+      MAXBITS 36
+    + START PIN DFT_sdi_1
+    + FLOATING 
+       X_reg[0] ( IN SI ) ( OUT Q ) 
+       X_reg[1] ( IN SI ) ( OUT Q ) 
+       X_reg[2] ( IN SI ) ( OUT Q ) 
+       X_reg[3] ( IN SI ) ( OUT Q ) 
+       X_reg[4] ( IN SI ) ( OUT Q ) 
+       X_reg[5] ( IN SI ) ( OUT Q ) 
+       X_reg[6] ( IN SI ) ( OUT Q ) 
+       X_reg[7] ( IN SI ) ( OUT Q ) 
+       Y_reg[0] ( IN SI ) ( OUT Q ) 
+       Y_reg[1] ( IN SI ) ( OUT Q ) 
+       Y_reg[2] ( IN SI ) ( OUT Q ) 
+       Y_reg[3] ( IN SI ) ( OUT Q ) 
+       Y_reg[4] ( IN SI ) ( OUT Q ) 
+       Y_reg[5] ( IN SI ) ( OUT Q ) 
+       Y_reg[6] ( IN SI ) ( OUT Q ) 
+       Y_reg[7] ( IN SI ) ( OUT Q ) 
+       out1_reg[0] ( IN SI ) ( OUT Q ) 
+       out1_reg[1] ( IN SI ) ( OUT Q ) 
+       out1_reg[2] ( IN SI ) ( OUT Q ) 
+       out1_reg[3] ( IN SI ) ( OUT Q ) 
+       out1_reg[4] ( IN SI ) ( OUT Q ) 
+       out1_reg[5] ( IN SI ) ( OUT Q ) 
+       out1_reg[6] ( IN SI ) ( OUT Q ) 
+       out1_reg[7] ( IN SI ) ( OUT Q ) 
+       out2_reg[0] ( IN SI ) ( OUT Q ) 
+       out2_reg[1] ( IN SI ) ( OUT Q ) 
+       out2_reg[2] ( IN SI ) ( OUT Q ) 
+       out2_reg[3] ( IN SI ) ( OUT Q ) 
+       out2_reg[4] ( IN SI ) ( OUT Q ) 
+       out2_reg[5] ( IN SI ) ( OUT Q ) 
+       out2_reg[6] ( IN SI ) ( OUT Q ) 
+       out2_reg[7] ( IN SI ) ( OUT Q ) 
+       sel_ff_reg[0] ( IN SI ) ( OUT Q ) 
+       sel_ff_reg[1] ( IN SI ) ( OUT Q ) 
+       sel_ff_reg[2] ( IN SI ) ( OUT Q ) 
+       sel_ff_reg[3] ( IN SI ) ( OUT Q ) 
+    + STOP PIN DFT_sdo_1
+;
+
+END SCANCHAINS 
+END DESIGN 
