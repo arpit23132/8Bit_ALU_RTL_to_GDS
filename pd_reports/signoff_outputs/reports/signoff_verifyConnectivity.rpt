@@ -1,0 +1,24 @@
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Tue Jun 30 01:17:48 2026
+
+Design Name: ALU
+Database Units: 2000
+Design Boundary: (0.0000, 0.0000) (103.2400, 99.4700)
+Error Limit = 1000; Warning Limit = 50
+Check all nets
+Net in1[7]: Found a geometry with bounding box (0.00,99.41) (0.59,99.53) outside the design boundary.
+Violations for such geometries will be reported.
+
+Begin Summary 
+  Found no problems or warnings.
+End Summary
+
+End Time: Tue Jun 30 01:17:48 2026
+Time Elapsed: 0:00:00.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 0 Viols.  0 Wrngs.
+  (CPU Time: 0:00:00.0  MEM: 0.000M)
+
